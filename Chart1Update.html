@@ -8,6 +8,9 @@
 				position:absolute;
 				border: 0;
 				top:0;
+				width: 100%;
+				height: 100%;
+				}
 			}
 		</style>
 	
@@ -15,8 +18,8 @@
 	
 	<iframe src="" scrolling="no"></iframe>
 	
-	<iframe width = "1200px" height = "600px" scrolling="no" src = 'Chart1.php' id="myFrame2" ></iframe>
-	<iframe width = "1200px" height = "600px" scrolling="no" src = 'Chart1.php' id="myFrame"></iframe>
+	<iframe scrolling="no" src = 'Chart1.php' id="myFrame2" ></iframe>
+	<iframe scrolling="no" src = 'Chart1.php' id="myFrame"></iframe>
   
 	<script>
 	
@@ -29,7 +32,7 @@
 
 		
 		setFrame();
-		setInterval(setFrame, 2000);
+		setInterval(setFrame, 10000);
 		
 		
 		function setFrame() {
@@ -49,7 +52,6 @@
 			}, 500);
 			
 		}
-		
 		
 		
 	</script>

@@ -15,8 +15,8 @@
 	
 	<iframe src="" scrolling="no"></iframe>
 	
-	<iframe width = "1200px" height = "600px" scrolling="no" src = 'Chart1.php' id="myFrame2" ></iframe>
-	<iframe width = "1200px" height = "600px" scrolling="no" src = 'Chart1.php' id="myFrame"></iframe>
+	<iframe width = "1200px" height = "600px" scrolling="no" src = 'Chart2.php' id="myFrame2" ></iframe>
+	<iframe width = "1200px" height = "600px" scrolling="no" src = 'Chart2.php' id="myFrame"></iframe>
   
 	<script>
 	
@@ -29,7 +29,7 @@
 
 		
 		setFrame();
-		setInterval(setFrame, 2000);
+		setInterval(setFrame, 10000);
 		
 		
 		function setFrame() {
@@ -38,13 +38,13 @@
 			}
 			catch(err){;}*/
 			
-		    ifr.src = 'http://localhost/Chart1.php';  
+		    ifr.src = 'http://localhost/Chart2.php';  
 			setTimeout(function(){
 				/*try {
 					document.getElementById('myFrame2').contentWindow.myChart.destroy();
 				}
 				catch(err){;}*/
-				ifr2.src = 'http://localhost/Chart1.php';  
+				ifr2.src = 'http://localhost/Chart2.php';  
 				
 			}, 500);
 			

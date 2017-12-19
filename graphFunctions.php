@@ -1,5 +1,5 @@
 <?php
-	$graphOffset  = 10;
+	$graphOffset  = 100;
 	$minimY		  = 0;
 	$maximY		  = 6;
 	$dataCounter  = 0;
