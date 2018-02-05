@@ -1,0 +1,1 @@
+CREATE TABLE `datadb`.`table2` ( `Data1` INT NOT NULL , `Data2` INT NOT NULL , `Data3` INT NOT NULL ) ENGINE = MyISAM;

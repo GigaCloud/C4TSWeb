@@ -1,8 +1,4 @@
-		window.addEventListener('unload', function () { //Ceva memory leak in chrome fara asta
-			document.documentElement.innerHTML = '';
-		});
-		
-		<?php $chartNumber = 2; /*Spune ce grafic esti*/?> 
+; /*Spune ce grafic esti*/?> 
 		var config = {
             type: 'line',
             data: {
