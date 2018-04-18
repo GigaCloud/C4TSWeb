@@ -24,7 +24,7 @@
 	$dataCounter  = 0;
 
 	function getDataCounter($table){
-		$mysqli 			= new mysqli("localhost", "root", "ayylmao123", "datadb");
+		$mysqli 			= new mysqli("localhost", "php","php", "datadb");
 		$result 			= $mysqli->query("SELECT COUNT(*) FROM table".$table);
 		$dataCounter 		= mysqli_fetch_array($result);
 		$dataCounter 		= $dataCounter[0];
