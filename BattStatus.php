@@ -1,7 +1,7 @@
 <meta charset="UTF-8">
 <html>
 	<head>
-		<title>Status GPS</title>
+		<title>Status Baterie</title>
 		<style>
 			div {
 				height: 90px;
@@ -14,6 +14,7 @@
 				-webkit-text-stroke-width: 1px;
 				-webkit-text-stroke-color: black;
 			}
+			
 		</style>
 	</head>
 
@@ -21,7 +22,7 @@
 	function getStatus(){
 		$column = "Data1";
 		$mysqli = new mysqli("localhost", "php", "php", "datadb");
-		$result = $mysqli->query("SELECT Data1 FROM tableGPS");
+		$result = $mysqli->query("SELECT Data1 FROM table5");
 		$data = array();
 		$counter = 0;
 		
@@ -31,24 +32,22 @@
 		}
 		return $data[$counter-1];
 	}
-	
+	 
 	function getColor(){
-		if (getStatus() == 0)
-			echo "red";
-		else
-			echo "green";
+		if (getStatus() > 7.5)
+			return "green";
+		if (getStatus() > 7.0)
+			return "yellow";
+		if (getStatus() > 6.5)
+			return "orange";
+		if (getStatus() > 6.0)
+			return "red";	
 	}
-	
-	function getTxt(){
-		if (getStatus() == 0)
-			echo "EROARE GPS";
-		else
-			echo "GPS OK";
-	}
+	 
 	?>
 	
-	<body style = "background-color: <?php getColor() ?>;">
-		<div><h1><?php getTxt() ?></h1></div>
+	<body style = "background-color: <?php echo getColor(); ?>">
+		<div><h1><?php echo getStatus() ?> V</h1></div>
 			
 	
 		<script>
