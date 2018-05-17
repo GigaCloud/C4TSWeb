@@ -4,7 +4,7 @@
 		$v3 = 0;
 		
 		$mysqli = new mysqli("localhost", "php", "php", "datadb");
-		if ($tableNumber == "GPS" or $tableNumber == "BMP" or $tableNumber == "SHT" or $tableNumber == "DS18" or $tableNumber == "TSL"){
+		if ($tableNumber == "GPS" or $tableNumber == "BMP" or $tableNumber == "SHT" or $tableNumber == "DS18" or $tableNumber == "TSL" or $tableNumber == "time"){
 			$result = $mysqli->query("INSERT INTO `table" .$tableNumber. "` (`Data1`) VALUES ('" .$v1. "')");
 		} else { 
 			$v2 = $_GET["v2"];		
