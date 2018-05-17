@@ -4,9 +4,9 @@
 		$v3 = 0;
 		
 		$mysqli = new mysqli("localhost", "php", "php", "datadb");
-		if ($tableNumber == "GPS"){
+		if ($tableNumber == "GPS" or $tableNumber == "BMP" or $tableNumber == "SHT" or $tableNumber == "DS18" or $tableNumber == "TSL"){
 			$result = $mysqli->query("INSERT INTO `table" .$tableNumber. "` (`Data1`) VALUES ('" .$v1. "')");
-		} else {
+		} else { 
 			$v2 = $_GET["v2"];		
 			$result = $mysqli->query("INSERT INTO `table" .$tableNumber. "` (`Data1`, `Data2`, `Data3`) VALUES ('" .$v1. "', '" .$v2. "', '" .$v3. "')");
 		}

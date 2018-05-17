@@ -34,9 +34,9 @@
 	
 	function getColor(){
 		if (getStatus() == 0)
-			echo "red";
+			echo "#d32f2f";
 		else
-			echo "green";
+			echo "#43a047";
 	}
 	
 	function getTxt(){
