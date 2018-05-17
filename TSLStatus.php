@@ -60,7 +60,7 @@
         if(getStatus())
             echo " - OK";
         else
-            echo " - EROARE";
+            echo "-ERR";
 	}
 	?>
 	
