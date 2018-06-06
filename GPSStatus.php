@@ -1,7 +1,7 @@
 <meta charset="UTF-8">
 <html>
 	<head>
-		<title>Status GPS</title>
+		<title>Status TSL</title>
 		<style>
 			div {
 				height: 90px;
@@ -18,6 +18,22 @@
 	</head>
 
 	<?php
+    
+    function getData(){
+		$column = "Data2";
+		$mysqli = new mysqli("localhost", "php", "php", "datadb");
+		$result = $mysqli->query("SELECT Data2 FROM table3");
+		$data = array();
+		$counter = 0;
+		
+		while ($row = mysqli_fetch_array($result)) {
+			array_push($data, $row[$column]);
+			$counter += 1;
+		}
+		return $data[$counter-1];
+	}
+    
+    
 	function getStatus(){
 		$column = "Data1";
 		$mysqli = new mysqli("localhost", "php", "php", "datadb");
@@ -40,10 +56,11 @@
 	}
 	
 	function getTxt(){
-		if (getStatus() == 0)
-			echo "EROARE GPS";
-		else
-			echo "GPS OK";
+        echo getData()."m";
+        if(getStatus())
+            echo " - OK";
+        else
+            echo "-ERR";
 	}
 	?>
 	
