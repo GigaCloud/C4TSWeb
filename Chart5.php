@@ -105,7 +105,7 @@
                 responsive: true,
                 title:{
                     display:true,
-                    text:'Grafic de test'
+                    text:'Tensiune baterie'
                 },
                 tooltips: {
                     mode: 'index',
