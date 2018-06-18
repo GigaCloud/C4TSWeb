@@ -21,7 +21,7 @@
     
     function getData(){
 		$column = "Data1";
-		$mysqli = new mysqli("localhost", "php", "php", "datadb");
+		include('config.php');$mysqli = new mysqli($host, $user, $pass, $database);
 		$result = $mysqli->query("SELECT Data1 FROM tabletime");
 		$data = array();
 		$counter = 0;

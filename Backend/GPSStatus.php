@@ -21,7 +21,7 @@
     
     function getData(){
 		$column = "Data2";
-		$mysqli = new mysqli("localhost", "php", "php", "datadb");
+		include('config.php');$mysqli = new mysqli($host, $user, $pass, $database);
 		$result = $mysqli->query("SELECT Data2 FROM table3");
 		$data = array();
 		$counter = 0;
@@ -36,7 +36,7 @@
     
 	function getStatus(){
 		$column = "Data1";
-		$mysqli = new mysqli("localhost", "php", "php", "datadb");
+		include('config.php');$mysqli = new mysqli($host, $user, $pass, $database);
 		$result = $mysqli->query("SELECT Data1 FROM tableGPS");
 		$data = array();
 		$counter = 0;
