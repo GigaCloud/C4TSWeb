@@ -1,0 +1,59 @@
+<html>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+		<style>
+			iframe{
+				overflow: hidden;
+				position:absolute;
+				border: 0;
+				top:0;
+				width: 90%;
+				height: 90%;
+				}
+			}
+		</style>
+
+	</head>
+
+	<iframe src="" scrolling="no"></iframe>
+
+	<iframe scrolling="no" src = 'Chart1.php' id="myFrame2" ></iframe>
+	<iframe scrolling="no" src = 'Chart1.php' id="myFrame"></iframe>
+
+	<script>
+
+		window.addEventListener('unload', function () { //Ceva memory leak in chrome fara asta
+			document.documentElement.innerHTML = '';
+		});
+
+		var ifr = document.getElementById('myFrame');
+		var ifr2 = document.getElementById('myFrame2');
+
+
+		setFrame();
+		setInterval(setFrame, 60000);
+
+
+		function setFrame() {
+			/*try {
+				document.getElementById('myFrame').contentWindow.myChart.destroy();
+			}
+			catch(err){;}*/
+
+		    ifr.src = 'Chart1.php';
+			setTimeout(function(){
+				/*try {
+					document.getElementById('myFrame2').contentWindow.myChart.destroy();
+				}
+				catch(err){;}*/
+				ifr2.src = 'Chart1.php';
+
+			}, 500);
+
+		}
+
+
+	</script>
+
+</html>
